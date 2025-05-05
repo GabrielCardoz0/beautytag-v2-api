@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicos",
+  "info": {
+    "singularName": "servico",
+    "pluralName": "servicos",
+    "displayName": "servico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "preco": {
+      "type": "decimal"
+    },
+    "percent_colab": {
+      "type": "decimal"
+    },
+    "percent_repasse": {
+      "type": "decimal"
+    },
+    "preco_colab": {
+      "type": "decimal"
+    },
+    "preco_parceiro": {
+      "type": "decimal"
+    },
+    "lucro": {
+      "type": "decimal"
+    },
+    "genero": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "servicos"
+    },
+    "plano_servicos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::plano-servico.plano-servico",
+      "mappedBy": "servico"
+    },
+    "formulario_opcao": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::formulario-opcao.formulario-opcao",
+      "mappedBy": "servico"
+    },
+    "formulario_opcao_secundarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::formulario-opcao.formulario-opcao",
+      "inversedBy": "servicos_secundarios"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "checkins",
+  "info": {
+    "singularName": "checkin",
+    "pluralName": "checkins",
+    "displayName": "checkin",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hash": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "servico": {
+      "type": "string"
+    },
+    "data_reservada": {
+      "type": "datetime"
+    },
+    "data_inicio": {
+      "type": "datetime"
+    },
+    "data_fim": {
+      "type": "datetime"
+    }
+  }
+}

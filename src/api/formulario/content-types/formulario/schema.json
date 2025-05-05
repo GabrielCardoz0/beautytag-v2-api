@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formularios",
+  "info": {
+    "singularName": "formulario",
+    "pluralName": "formularios",
+    "displayName": "formulario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "formulario_opcaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::formulario-opcao.formulario-opcao",
+      "mappedBy": "formulario"
+    }
+  }
+}

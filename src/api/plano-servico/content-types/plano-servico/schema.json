@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plano_servicos",
+  "info": {
+    "singularName": "plano-servico",
+    "pluralName": "plano-servicos",
+    "displayName": "plano_servico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "frequencia": {
+      "type": "string"
+    },
+    "frequencia_value": {
+      "type": "integer"
+    },
+    "servico": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::servico.servico",
+      "inversedBy": "plano_servicos"
+    },
+    "planos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::plano.plano",
+      "mappedBy": "plano_servicos"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "planos",
+  "info": {
+    "singularName": "plano",
+    "pluralName": "planos",
+    "displayName": "plano",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "plano"
+    },
+    "is_pago": {
+      "type": "boolean",
+      "default": false
+    },
+    "plano_servicos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::plano-servico.plano-servico",
+      "inversedBy": "planos"
+    }
+  }
+}

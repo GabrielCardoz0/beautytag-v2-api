@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formulario_opcaos",
+  "info": {
+    "singularName": "formulario-opcao",
+    "pluralName": "formulario-opcaos",
+    "displayName": "formulario_opcao",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "servico": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::servico.servico",
+      "inversedBy": "formulario_opcao"
+    },
+    "servicos_secundarios": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::servico.servico",
+      "mappedBy": "formulario_opcao_secundarios"
+    },
+    "formulario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::formulario.formulario",
+      "inversedBy": "formulario_opcaos"
+    }
+  }
+}
